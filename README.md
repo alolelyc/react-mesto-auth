@@ -12,4 +12,4 @@ InfoTooltip -компонент модального окна,который и�
 Все запросы на авторизацию, регистрацию и проверку токена работают через сервис https://auth.nomoreparties.co.
 
 Ссылка на проект:
-https://github.com/alolelyc/react-mesto-auth.git
+https://github.com/alolelyc/react-mesto-auth.gitgit commit

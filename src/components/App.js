@@ -88,7 +88,6 @@ function App() {
   }, [isLoggedIn, navigate]);
 
   useEffect(() => {
-    setIsLoading(!isLoading);
     Promise.all([api.getProfileInfo(), api.getServerCards()])
       .then(([userData, initialCards]) => {
         setCurrentUser(userData);

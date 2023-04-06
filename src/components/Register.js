@@ -33,6 +33,7 @@ function Register(props) {
 
         <input
           placeholder="Пароль"
+          type="password"
           className="login__input"
           value={password}
           autoComplete="on"
