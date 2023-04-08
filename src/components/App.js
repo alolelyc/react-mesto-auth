@@ -88,19 +88,19 @@ function App() {
   }, [isLoggedIn, navigate]);
 
   useEffect(() => {
-    Promise.all([api.getProfileInfo(), api.getServerCards()])
-      .then(([userData, initialCards]) => {
-        setCurrentUser(userData);
-        setCards(initialCards);
-      })
+    if (isLoggedIn) {
+      Promise.all([api.getProfileInfo(), api.getServerCards()])
+        .then(([userData, initialCards]) => {
+          setCurrentUser(userData);
+          setCards(initialCards);
+        })
 
-      .catch((err) => {
-        console.log(`Error: ${err}`);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+        .catch((err) => {
+          console.log(`Error: ${err}`);
+        })
+        .finally(() => setIsLoading(false));
+    }
+  }, [isLoggedIn]);
 
   const handleEditProfileClick = () => {
     setIsEditProfilePopupOpen(!isEditProfilePopupOpen);
